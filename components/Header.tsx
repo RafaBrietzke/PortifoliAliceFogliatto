@@ -17,7 +17,7 @@ export default function Header({ name }: { name: string }) {
         </nav>
         <div className="header-actions">
           <Link href="/#contato" className="btn btn-primary">
-            Vamos conversar
+            Let's Work Together
           </Link>
         </div>
       </div>

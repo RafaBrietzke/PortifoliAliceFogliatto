@@ -8,8 +8,8 @@ import type { Project, Service, SiteSettings, Testimonial } from './types';
 export const mockSiteSettings: SiteSettings = {
   name: 'Alice Fogliatto',
   role: 'Product & Brand Designer',
-  heroTitle: 'From idea to play experiences',
-  heroAccentWord: 'histórias',
+  heroTitle: 'From idea to play experience',
+  heroAccentWord: 'play experience',
   heroSubtitle:
     'Toy & Product Designer creating thoughtful experiences through storytelling, strategy and play.',
   aboutLead:
