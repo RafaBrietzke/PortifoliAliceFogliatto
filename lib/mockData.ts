@@ -13,11 +13,11 @@ export const mockSiteSettings: SiteSettings = {
   heroSubtitle:
     'Toy & Product Designer creating thoughtful experiences through storytelling, strategy and play.',
   aboutLead:
-    'Unindo pesquisa, identidade visual e estratégia de marca para criar projetos que conectam pessoas e histórias reais — sempre com atenção aos detalhes que fazem a diferença.',
+    'Toy & Product Designer specialized in the development of licensed products and engaging play experiences, with 8+ years of experience bringing ideas from concept to market.',
   highlights: [
-    { value: '6+', label: 'anos criando identidades visuais' },
-    { value: '40+', label: 'projetos entregues' },
-    { value: '15+', label: 'marcas atendidas' },
+    { value: '8+', label: 'years of experience' },
+    { value: '55+', label: 'products launched' },
+    { value: '3M+', label: 'Unit sold worlwide' },
   ],
   skills: ['Branding', 'UI/UX Design', 'Direção de Arte', 'Ilustração', 'Social Media', 'Embalagens'],
   email: 'ola@nomesobrenome.com',
