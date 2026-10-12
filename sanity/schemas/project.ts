@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { categories } from '../../lib/categories';
 
 export default defineType({
   name: 'project',
@@ -22,7 +23,11 @@ export default defineType({
       name: 'category',
       title: 'Categoria',
       type: 'string',
-      description: 'Ex: Branding, UI/UX Design, Editorial, Embalagens…',
+      description: 'Define em qual fileira da seção de projetos o card aparece.',
+      options: {
+        list: categories.map((c) => ({ title: c.title, value: c.id })),
+        layout: 'radio',
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -30,7 +35,7 @@ export default defineType({
       title: 'Resumo curto',
       type: 'text',
       rows: 2,
-      description: 'Aparece no card da grade de projetos.',
+      description: 'Aparece no card da seção de projetos.',
       validation: (Rule) => Rule.required().max(160),
     }),
     defineField({

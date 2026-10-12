@@ -8,6 +8,9 @@ export type Project = {
   summary: string;
   coverImage?: Image;
   gallery?: Image[];
+  // imagens locais em /public, usadas enquanto o projeto não está no Sanity
+  coverUrl?: string;
+  galleryUrls?: string[];
   client?: string;
   year?: string;
   role?: string;

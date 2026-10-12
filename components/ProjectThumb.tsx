@@ -17,7 +17,7 @@ export default function ProjectThumb({
   sizes?: string;
   children?: ReactNode;
 }) {
-  const imageUrl = urlForImage(project.coverImage)?.width(900).height(700).url();
+  const imageUrl = urlForImage(project.coverImage)?.width(900).height(700).url() ?? project.coverUrl;
   const gradient = gradients[index % gradients.length];
 
   return (

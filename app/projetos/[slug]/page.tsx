@@ -6,6 +6,7 @@ import Footer from '../../../components/Footer';
 import ProjectDescription from '../../../components/ProjectDescription';
 import { urlForImage } from '../../../sanity/lib/image';
 import { gradients } from '../../../lib/mockData';
+import { categoryTitle } from '../../../lib/categories';
 import {
   getProjectBySlug,
   getProjects,
@@ -31,10 +32,11 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   const index = Math.max(0, allProjects.findIndex((p) => p.slug === project.slug));
   const gradient = gradients[index % gradients.length];
-  const heroImageUrl = urlForImage(project.coverImage)?.width(1400).height(700).url();
+  const heroImageUrl = urlForImage(project.coverImage)?.width(1400).height(700).url() ?? project.coverUrl;
   const galleryImages = (project.gallery || [])
     .map((img) => urlForImage(img)?.width(700).height(500).url())
     .filter(Boolean) as string[];
+  if (galleryImages.length === 0 && project.galleryUrls) galleryImages.push(...project.galleryUrls);
 
   return (
     <>
@@ -51,7 +53,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
           <div className="pd-head">
             <div>
-              <span className="eyebrow">{project.category}</span>
+              <span className="eyebrow">{categoryTitle(project.category)}</span>
               <h2>{project.title}</h2>
             </div>
             <div className="pd-meta">
