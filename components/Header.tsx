@@ -9,10 +9,10 @@ export default function Header({ name }: { name: string }) {
         </Link>
         <nav className="main-nav">
           <ul>
-            <li><Link href="/#sobre">Sobre</Link></li>
-            <li><Link href="/#projetos">Projetos</Link></li>
-            <li><Link href="/#servicos">Serviços</Link></li>
-            <li><Link href="/#depoimentos">Depoimentos</Link></li>
+            <li><Link href="/#sobre">About</Link></li>
+            <li><Link href="/#projetos">Projects</Link></li>
+            <li><Link href="/#servicos">Services</Link></li>
+            <li><Link href="/#depoimentos">Testimonials</Link></li>
           </ul>
         </nav>
         <div className="header-actions">

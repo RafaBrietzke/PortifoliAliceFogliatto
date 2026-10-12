@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import ProjectsGrid from '../components/ProjectsGrid';
+import Marquee from '../components/Marquee';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import CtaFooter from '../components/CtaFooter';
@@ -25,6 +26,7 @@ export default async function HomePage() {
         <Hero settings={settings} />
         <About settings={settings} />
         <ProjectsGrid projects={projects} />
+        <Marquee />
         <Services services={services} />
         <Testimonials testimonials={testimonials} />
         <CtaFooter settings={settings} />
