@@ -226,10 +226,11 @@ export const mockProjects: Project[] = [
 ];
 
 export const mockServices: Service[] = [
-  { _id: 'svc-1', title: 'Identidade Visual', description: 'Criação de marcas completas, do conceito ao manual de identidade.', icon: 'target' },
-  { _id: 'svc-2', title: 'UI/UX Design', description: 'Interfaces digitais pensadas para experiência, clareza e conversão.', icon: 'screen' },
-  { _id: 'svc-3', title: 'Direção de Arte', description: 'Curadoria visual para campanhas, editorial e conteúdo de marca.', icon: 'document' },
-  { _id: 'svc-4', title: 'Consultoria Criativa', description: 'Apoio estratégico para projetos que precisam de um novo olhar visual.', icon: 'star' },
+  { _id: 'svc-1', title: 'Product Design', description: 'End-to-end development, from initial concept to final product.', icon: 'target' },
+  { _id: 'svc-2', title: '3D Modeling & Visualization', description: '3D models and visuals to bring product ideas to life.', icon: 'screen' },
+  { _id: 'svc-3', title: 'Market & Product Research', description: 'Research, benchmarking and insights to identify opportunities.', icon: 'document' },
+  { _id: 'svc-4', title: 'Technical Development', description: 'Specifications and design development with manufacturing feasibility in mind.', icon: 'star' },
+  { _id: 'svc-4', title: 'Product Development Consulting', description: 'Strategic guidance to help turn ideas into viable products.', icon: 'star' },
 ];
 
 export const mockTestimonials: Testimonial[] = [
