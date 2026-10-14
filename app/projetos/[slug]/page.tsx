@@ -52,6 +52,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   const meta = [
     { label: 'Client', value: project.client },
+    { label: 'Company', value: project.company },
     { label: 'Year', value: project.year },
     { label: 'Role', value: project.role },
     { label: 'Tools', value: project.tools },

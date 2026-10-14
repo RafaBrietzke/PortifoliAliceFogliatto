@@ -12,6 +12,7 @@ export type Project = {
   coverUrl?: string;
   galleryUrls?: string[];
   client?: string;
+  company?: string;
   year?: string;
   role?: string;
   tools?: string;

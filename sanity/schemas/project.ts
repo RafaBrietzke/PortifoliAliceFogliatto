@@ -57,6 +57,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'company',
+      title: 'Empresa',
+      type: 'string',
+    }),
+    defineField({
       name: 'year',
       title: 'Ano',
       type: 'string',
