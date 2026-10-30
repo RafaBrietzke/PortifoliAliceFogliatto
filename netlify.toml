@@ -1,0 +1,11 @@
+# Configuração de deploy na Netlify. O plugin oficial de Next.js
+# (@netlify/plugin-nextjs) é detectado e instalado automaticamente;
+# ele cuida do middleware de idioma, do ISR (revalidate) e do next/image.
+# As variáveis NEXT_PUBLIC_SANITY_* ficam no painel da Netlify, não aqui.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
