@@ -13,11 +13,15 @@ mexer em código.
 - O site funciona **mesmo antes de configurar o Sanity**: enquanto não
   houver conexão com o CMS, ele mostra conteúdo de exemplo (arquivo
   `lib/mockData.ts`), então dá pra rodar e ver o site funcionando desde já.
+- **Dois idiomas**: inglês em `/` e português em `/pt`, com as bandeiras no
+  cabeçalho para trocar. Os textos fixos da interface estão em `lib/i18n.ts`
+  e a tradução do conteúdo de exemplo em `lib/mockData.pt.ts`.
 
 ```
-app/                    → páginas (rotas) do site
+app/[lang]/             → páginas (rotas) do site, uma versão por idioma
   page.tsx                → home
   projetos/[slug]/page.tsx→ página de cada estudo de caso
+middleware.ts           → serve o inglês sem prefixo e o português em /pt
   studio/[[...tool]]/     → painel de edição de conteúdo (/studio)
 components/             → componentes visuais (Header, Hero, cards, etc.)
 sanity/schemas/         → definição dos "formulários" de conteúdo do CMS

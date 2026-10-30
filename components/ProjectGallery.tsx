@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from './Reveal';
+import { getDictionary, type Locale } from '../lib/i18n';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -11,7 +12,8 @@ const pad = (n: number) => String(n).padStart(2, '0');
 // height:auto o navegador usa a proporção real assim que a imagem carrega).
 // Fotos panorâmicas ocupam a largura toda, e clicar em qualquer uma abre a
 // versão ampliada num <dialog>, com setas e teclado.
-export default function ProjectGallery({ images, title }: { images: string[]; title: string }) {
+export default function ProjectGallery({ images, title, lang }: { images: string[]; title: string; lang: Locale }) {
+  const t = getDictionary(lang).gallery;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [current, setCurrent] = useState<number | null>(null);
   const [wide, setWide] = useState<number[]>([]);
@@ -42,10 +44,10 @@ export default function ProjectGallery({ images, title }: { images: string[]; ti
         {images.map((src, i) => (
           <li key={src} className={wide.includes(i) ? 'is-wide' : undefined}>
             <Reveal>
-              <button type="button" className="pd-shot" onClick={() => setCurrent(i)} aria-label={`Open image ${i + 1} of ${total}`}>
+              <button type="button" className="pd-shot" onClick={() => setCurrent(i)} aria-label={t.open(i + 1, total)}>
                 <Image
                   src={src}
-                  alt={`${title} — image ${i + 1}`}
+                  alt={t.image(title, i + 1)}
                   width={1080}
                   height={1350}
                   sizes="(max-width: 760px) 100vw, (max-width: 1240px) 50vw, 1120px"
@@ -61,32 +63,32 @@ export default function ProjectGallery({ images, title }: { images: string[]; ti
         ))}
       </ul>
 
-      <dialog ref={dialogRef} className="lightbox" onClose={() => setCurrent(null)} aria-label={`${title} — images`}>
+      <dialog ref={dialogRef} className="lightbox" onClose={() => setCurrent(null)} aria-label={t.images(title)}>
         {current !== null && (
           <div className="lightbox-stage" onClick={(event) => event.target === event.currentTarget && setCurrent(null)}>
             <Image
               key={images[current]}
               src={images[current]}
-              alt={`${title} — image ${current + 1}`}
+              alt={t.image(title, current + 1)}
               width={1080}
               height={1350}
               sizes="100vw"
               className="lightbox-img"
             />
-            <button type="button" className="lightbox-btn lightbox-close" onClick={() => setCurrent(null)} aria-label="Close">
+            <button type="button" className="lightbox-btn lightbox-close" onClick={() => setCurrent(null)} aria-label={t.close}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
             {total > 1 && (
               <div className="lightbox-nav">
-                <button type="button" className="lightbox-btn" onClick={() => step(-1)} aria-label="Previous image">
+                <button type="button" className="lightbox-btn" onClick={() => step(-1)} aria-label={t.previous}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M15 6l-6 6 6 6" />
                   </svg>
                 </button>
                 <span className="lightbox-count">{pad(current + 1)} / {pad(total)}</span>
-                <button type="button" className="lightbox-btn" onClick={() => step(1)} aria-label="Next image">
+                <button type="button" className="lightbox-btn" onClick={() => step(1)} aria-label={t.next}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M9 6l6 6-6 6" />
                   </svg>

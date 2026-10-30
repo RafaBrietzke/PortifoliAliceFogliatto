@@ -1,19 +1,22 @@
 import Reveal from './Reveal';
 import CategoryShape from './CategoryShape';
 import type { CategoryShapeName } from '../lib/categories';
+import { getDictionary, type Locale } from '../lib/i18n';
 import type { Service } from '../lib/types';
 
 const shapes: CategoryShapeName[] = ['burst', 'flower', 'spiral'];
 
-export default function Services({ services }: { services: Service[] }) {
+export default function Services({ services, lang }: { services: Service[]; lang: Locale }) {
+  const t = getDictionary(lang);
+
   return (
     <section className="services" id="servicos">
       <div className="services-inner wrap">
         <Reveal className="services-head">
           <h2>
-            <span className="hero-title-lead">How I</span> <span className="accent-text">can help</span>
+            <span className="hero-title-lead">{t.services.lead}</span> <span className="accent-text">{t.services.accent}</span>
           </h2>
-          <p>Tailored services for brands and products that want to communicate with clarity and personality.</p>
+          <p>{t.services.intro}</p>
           <CategoryShape shape="flower" className="services-shape" />
         </Reveal>
         <ol className="services-list">

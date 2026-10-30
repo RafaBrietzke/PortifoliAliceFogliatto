@@ -1,23 +1,24 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
-import CtaFooter from '../../../components/CtaFooter';
-import Reveal from '../../../components/Reveal';
-import CategoryShape from '../../../components/CategoryShape';
-import Sparkle from '../../../components/Sparkle';
-import ProjectThumb from '../../../components/ProjectThumb';
-import ProjectGallery from '../../../components/ProjectGallery';
-import ProjectDescription from '../../../components/ProjectDescription';
-import { urlForImage } from '../../../sanity/lib/image';
-import { categories } from '../../../lib/categories';
+import Header from '../../../../components/Header';
+import Footer from '../../../../components/Footer';
+import CtaFooter from '../../../../components/CtaFooter';
+import Reveal from '../../../../components/Reveal';
+import CategoryShape from '../../../../components/CategoryShape';
+import Sparkle from '../../../../components/Sparkle';
+import ProjectThumb from '../../../../components/ProjectThumb';
+import ProjectGallery from '../../../../components/ProjectGallery';
+import ProjectDescription from '../../../../components/ProjectDescription';
+import { urlForImage } from '../../../../sanity/lib/image';
+import { localizeCategories } from '../../../../lib/categories';
+import { getDictionary, localePath, type Locale } from '../../../../lib/i18n';
 import {
   getProjectBySlug,
   getProjects,
   getProjectSlugs,
   getSiteSettings,
-} from '../../../lib/getContent';
+} from '../../../../lib/getContent';
 
 export const revalidate = 60;
 
@@ -26,16 +27,18 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: { slug: string; lang: Locale } }) {
+  const { lang } = params;
   const [project, allProjects, settings] = await Promise.all([
-    getProjectBySlug(params.slug),
-    getProjects(),
-    getSiteSettings(),
+    getProjectBySlug(params.slug, lang),
+    getProjects(lang),
+    getSiteSettings(lang),
   ]);
 
   if (!project) notFound();
 
-  const category = categories.find((c) => c.id === project.category);
+  const t = getDictionary(lang);
+  const category = localizeCategories(lang).find((c) => c.id === project.category);
   const shape = category?.shape ?? 'burst';
   const coverUrl = urlForImage(project.coverImage)?.width(1200).height(940).url() ?? project.coverUrl;
   // na galeria só limitamos a largura, para a foto manter a proporção original
@@ -51,26 +54,26 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   const next = pool.length > 1 ? pool[(pool.findIndex((p) => p.slug === project.slug) + 1) % pool.length] : undefined;
 
   const meta = [
-    { label: 'Client', value: project.client },
-    { label: 'Company', value: project.company },
-    { label: 'Year', value: project.year },
-    { label: 'Role', value: project.role },
-    { label: 'Tools', value: project.tools },
+    { label: t.project.meta.client, value: project.client },
+    { label: t.project.meta.company, value: project.company },
+    { label: t.project.meta.year, value: project.year },
+    { label: t.project.meta.role, value: project.role },
+    { label: t.project.meta.tools, value: project.tools },
   ].filter((item) => item.value);
 
   return (
     <>
-      <Header name={settings.name} />
+      <Header name={settings.name} lang={lang} path={`/projetos/${project.slug}`} />
       <main className={`project-page cat-${project.category}`}>
         <section className="pd-top">
           <div className="wrap">
-            <Link href="/#projetos" className="back-link">
+            <Link href={localePath(lang, '/#projetos')} className="back-link">
               <span className="back-link-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M19 12H5M11 6l-6 6 6 6" />
                 </svg>
               </span>
-              Back to projects
+              {t.project.back}
             </Link>
 
             <div className="pd-intro">
@@ -116,7 +119,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             <div className="pd-story-inner wrap">
               <Reveal>
                 <h2>
-                  <span className="hero-title-lead">About the</span> <span className="accent-text">project</span>
+                  <span className="hero-title-lead">{t.project.storyLead}</span> <span className="accent-text">{t.project.storyAccent}</span>
                 </h2>
               </Reveal>
               <Reveal className="pd-story-text">
@@ -140,11 +143,11 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             <div className="wrap">
               <Reveal className="pd-shots-head">
                 <h2>
-                  <span className="hero-title-lead">A closer</span> <span className="accent-text">look</span>
+                  <span className="hero-title-lead">{t.project.shotsLead}</span> <span className="accent-text">{t.project.shotsAccent}</span>
                 </h2>
-                <p>Click any image to see it full size.</p>
+                <p>{t.project.shotsHint}</p>
               </Reveal>
-              <ProjectGallery images={galleryImages} title={project.title} />
+              <ProjectGallery images={galleryImages} title={project.title} lang={lang} />
             </div>
           </section>
         )}
@@ -152,7 +155,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         <section className="pd-next">
           <div className="wrap">
             <Reveal>
-              <Link href={next ? `/projetos/${next.slug}` : '/#projetos'} className="pd-next-link">
+              <Link href={localePath(lang, next ? `/projetos/${next.slug}` : '/#projetos')} className="pd-next-link">
                 {next && (
                   <div className="pd-next-frame">
                     <ProjectThumb project={next} index={allProjects.indexOf(next)} className="pd-next-thumb" sizes="380px" />
@@ -161,9 +164,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 <div>
                   <span className="pd-next-label">
                     <Sparkle />
-                    {next ? 'Next project' : 'Keep exploring'}
+                    {next ? t.project.nextProject : t.project.keepExploring}
                   </span>
-                  <h2>{next ? next.title : 'All projects'}</h2>
+                  <h2>{next ? next.title : t.project.allProjects}</h2>
                   {next && <p>{next.summary}</p>}
                 </div>
                 <span className="pd-next-arrow">
@@ -176,9 +179,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           </div>
         </section>
 
-        <CtaFooter settings={settings} />
+        <CtaFooter settings={settings} lang={lang} />
       </main>
-      <Footer note={settings.footerNote} />
+      <Footer name={settings.name} note={settings.footerNote} lang={lang} />
     </>
   );
 }
