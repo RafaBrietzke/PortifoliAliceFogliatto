@@ -22,7 +22,7 @@ export const mockSiteSettings: SiteSettings = {
   skills: ['Branding', 'UI/UX Design', 'Direção de Arte', 'Ilustração', 'Social Media', 'Embalagens'],
   email: 'alicefogliatto@gmail.com',
   socialLinks: [
-    { label: 'Behance', url: 'https://www.behance.net/alicefogliatto' },
+    { label: 'Behance', url: 'https://www.behance.net/alicefogliatto1/projects' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alice-fogliatto/' },
   ],
 };
