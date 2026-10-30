@@ -22,12 +22,9 @@ export const mockSiteSettings: SiteSettings = {
   skills: ['Branding', 'UI/UX Design', 'Direção de Arte', 'Ilustração', 'Social Media', 'Embalagens'],
   email: 'alicefogliatto@gmail.com',
   socialLinks: [
-    { label: 'Instagram', url: '#' },
-    { label: 'Behance', url: '#' },
-    { label: 'LinkedIn', url: '#' },
-    { label: 'Pinterest', url: '#' },
+    { label: 'Behance', url: 'https://www.behance.net/alicefogliatto' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alice-fogliatto/' },
   ],
-  footerNote: 'Nome Sobrenome — conteúdo de exemplo, conecte o CMS para personalizar.',
 };
 
 export const mockProjects: Project[] = [
@@ -280,13 +277,13 @@ export const mockServices: Service[] = [
   { _id: 'svc-2', title: '3D Modeling & Visualization', description: '3D models and visuals to bring product ideas to life.', icon: 'screen' },
   { _id: 'svc-3', title: 'Market & Product Research', description: 'Research, benchmarking and insights to identify opportunities.', icon: 'document' },
   { _id: 'svc-4', title: 'Technical Development', description: 'Specifications and design development with manufacturing feasibility in mind.', icon: 'star' },
-  { _id: 'svc-4', title: 'Product Development Consulting', description: 'Strategic guidance to help turn ideas into viable products.', icon: 'star' },
+  { _id: 'svc-5', title: 'Product Development Consulting', description: 'Strategic guidance to help turn ideas into viable products.', icon: 'star' },
 ];
 
 export const mockTestimonials: Testimonial[] = [
-  { _id: 't-1', quote: 'Trabalhar juntos foi transformador para a nossa marca. Cada detalhe foi pensado com muito cuidado e estratégia.', name: 'Cliente Exemplo', role: 'Fundador(a), Empresa A' },
-  { _id: 't-2', quote: 'Entregou muito além do esperado — a identidade visual capturou exatamente a essência que queríamos comunicar.', name: 'Cliente Exemplo', role: 'Head de Marketing, Empresa B' },
-  { _id: 't-3', quote: 'Processo colaborativo do início ao fim, com uma sensibilidade visual rara. Recomendo de olhos fechados.', name: 'Cliente Exemplo', role: 'CEO, Empresa C' },
+  { _id: 't-1', quote: 'Working together was transformative for our brand. Every detail was thought through with great care and strategy.', name: 'Sample Client', role: 'Founder, Company A' },
+  { _id: 't-2', quote: 'Delivered far beyond expectations — the visual identity captured exactly the essence we wanted to communicate.', name: 'Sample Client', role: 'Head of Marketing, Company B' },
+  { _id: 't-3', quote: 'A collaborative process from start to finish, with a rare visual sensibility. I recommend it with my eyes closed.', name: 'Sample Client', role: 'CEO, Company C' },
 ];
 
 export const gradients = [

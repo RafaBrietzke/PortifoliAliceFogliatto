@@ -1,9 +1,12 @@
 import Reveal from './Reveal';
 import CategoryShape from './CategoryShape';
 import Sparkle from './Sparkle';
+import { getDictionary, type Locale } from '../lib/i18n';
 import type { SiteSettings } from '../lib/types';
 
-export default function CtaFooter({ settings }: { settings: SiteSettings }) {
+export default function CtaFooter({ settings, lang }: { settings: SiteSettings; lang: Locale }) {
+  const t = getDictionary(lang);
+
   return (
     <section className="cta" id="contato">
       <div className="cta-visual" aria-hidden="true">
@@ -15,11 +18,11 @@ export default function CtaFooter({ settings }: { settings: SiteSettings }) {
       </div>
       <Reveal className="cta-inner wrap">
         <h2>
-          <span className="hero-title-lead">Let&apos;s create</span>
+          <span className="hero-title-lead">{t.cta.lead}</span>
           <br />
-          <span className="accent-text">something together</span>
+          <span className="accent-text">{t.cta.accent}</span>
         </h2>
-        <p className="cta-sub">Open to new projects, partnerships and creative collaborations.</p>
+        <p className="cta-sub">{t.cta.sub}</p>
         <a href={`mailto:${settings.email}`} className="cta-email">
           <span>{settings.email}</span>
           <span className="cta-email-arrow">

@@ -2,10 +2,13 @@ import { Fragment } from 'react';
 import Reveal from './Reveal';
 import CategoryShape from './CategoryShape';
 import Sparkle from './Sparkle';
-import { categories } from '../lib/categories';
+import { localizeCategories } from '../lib/categories';
+import { getDictionary, type Locale } from '../lib/i18n';
 import type { SiteSettings } from '../lib/types';
 
-export default function About({ settings }: { settings: SiteSettings }) {
+export default function About({ settings, lang }: { settings: SiteSettings; lang: Locale }) {
+  const t = getDictionary(lang);
+
   return (
     <section className="about" id="sobre">
       <div className="wrap">
@@ -35,10 +38,10 @@ export default function About({ settings }: { settings: SiteSettings }) {
 
         <Reveal className="whatido-row">
           <h2 className="whatido-label">
-            <span className="hero-title-lead">What I</span> <span className="accent-text">do</span>
+            <span className="hero-title-lead">{t.about.lead}</span> <span className="accent-text">{t.about.accent}</span>
           </h2>
           <div className="whatido-cards">
-            {categories.map((group, i) => (
+            {localizeCategories(lang).map((group, i) => (
               <div className="whatido-card" key={group.id}>
                 <span className="whatido-num">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{group.title}</h3>

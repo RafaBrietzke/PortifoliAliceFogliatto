@@ -13,42 +13,59 @@ import {
   mockSiteSettings,
   mockTestimonials,
 } from './mockData';
+import { ptProjects, ptServices, ptSiteSettings, ptTestimonials } from './mockData.pt';
+import type { Locale } from './i18n';
 import type { Project, Service, SiteSettings, Testimonial } from './types';
 
 // Cada função abaixo tenta buscar do Sanity (o CMS). Se o projeto ainda não
 // foi conectado (sem variáveis de ambiente) ou não há conteúdo publicado
 // ainda, ela cai automaticamente para os dados de exemplo em mockData.ts —
 // assim o site nunca fica "quebrado" ou em branco.
+//
+// O `lang` escolhe o idioma: em português, os dados de exemplo recebem as
+// traduções de mockData.pt.ts. O conteúdo do Sanity ainda é de um idioma só
+// e volta como está.
 
-export async function getSiteSettings(): Promise<SiteSettings> {
-  if (!isSanityConfigured) return mockSiteSettings;
+function translate<T extends { _id: string }>(items: T[], lang: Locale, pt: Record<string, Partial<T>>): T[] {
+  if (lang !== 'pt') return items;
+  return items.map((item) => ({ ...item, ...pt[item._id] }));
+}
+
+const localSettings = (lang: Locale): SiteSettings =>
+  lang === 'pt' ? { ...mockSiteSettings, ...ptSiteSettings } : mockSiteSettings;
+const localProjects = (lang: Locale) => translate(mockProjects, lang, ptProjects);
+const localServices = (lang: Locale) => translate(mockServices, lang, ptServices);
+const localTestimonials = (lang: Locale) => translate(mockTestimonials, lang, ptTestimonials);
+
+export async function getSiteSettings(lang: Locale): Promise<SiteSettings> {
+  if (!isSanityConfigured) return localSettings(lang);
   try {
     const data = await client.fetch<SiteSettings | null>(siteSettingsQuery);
-    return data ?? mockSiteSettings;
+    return data ?? localSettings(lang);
   } catch {
-    return mockSiteSettings;
+    return localSettings(lang);
   }
 }
 
-export async function getProjects(): Promise<Project[]> {
-  if (!isSanityConfigured) return mockProjects;
+export async function getProjects(lang: Locale): Promise<Project[]> {
+  if (!isSanityConfigured) return localProjects(lang);
   try {
     const data = await client.fetch<Project[]>(projectsQuery);
-    return data && data.length > 0 ? data : mockProjects;
+    return data && data.length > 0 ? data : localProjects(lang);
   } catch {
-    return mockProjects;
+    return localProjects(lang);
   }
 }
 
-export async function getProjectBySlug(slug: string): Promise<Project | undefined> {
+export async function getProjectBySlug(slug: string, lang: Locale): Promise<Project | undefined> {
   if (!isSanityConfigured) {
-    return mockProjects.find((p) => p.slug === slug);
+    return localProjects(lang).find((p) => p.slug === slug);
   }
   try {
     const data = await client.fetch<Project | null>(projectBySlugQuery, { slug });
-    return data ?? mockProjects.find((p) => p.slug === slug);
+    return data ?? localProjects(lang).find((p) => p.slug === slug);
   } catch {
-    return mockProjects.find((p) => p.slug === slug);
+    return localProjects(lang).find((p) => p.slug === slug);
   }
 }
 
@@ -62,22 +79,22 @@ export async function getProjectSlugs(): Promise<string[]> {
   }
 }
 
-export async function getServices(): Promise<Service[]> {
-  if (!isSanityConfigured) return mockServices;
+export async function getServices(lang: Locale): Promise<Service[]> {
+  if (!isSanityConfigured) return localServices(lang);
   try {
     const data = await client.fetch<Service[]>(servicesQuery);
-    return data && data.length > 0 ? data : mockServices;
+    return data && data.length > 0 ? data : localServices(lang);
   } catch {
-    return mockServices;
+    return localServices(lang);
   }
 }
 
-export async function getTestimonials(): Promise<Testimonial[]> {
-  if (!isSanityConfigured) return mockTestimonials;
+export async function getTestimonials(lang: Locale): Promise<Testimonial[]> {
+  if (!isSanityConfigured) return localTestimonials(lang);
   try {
     const data = await client.fetch<Testimonial[]>(testimonialsQuery);
-    return data && data.length > 0 ? data : mockTestimonials;
+    return data && data.length > 0 ? data : localTestimonials(lang);
   } catch {
-    return mockTestimonials;
+    return localTestimonials(lang);
   }
 }

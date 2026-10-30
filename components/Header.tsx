@@ -1,23 +1,30 @@
 import Link from 'next/link';
+import LanguageSwitch from './LanguageSwitch';
+import { getDictionary, localePath, type Locale } from '../lib/i18n';
 
-export default function Header({ name }: { name: string }) {
+export default function Header({ name, lang, path }: { name: string; lang: Locale; path: string }) {
+  const t = getDictionary(lang);
+  const href = (p: string) => localePath(lang, p);
+
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link href="/" className="logo">
+        <Link href={href('/')} className="logo">
           {name}
         </Link>
         <nav className="main-nav">
           <ul>
-            <li><Link href="/#sobre">About</Link></li>
-            <li><Link href="/#projetos">Projects</Link></li>
-            <li><Link href="/#servicos">Services</Link></li>
-            <li><Link href="/#depoimentos">Testimonials</Link></li>
+            <li><Link href={href('/#sobre')}>{t.nav.about}</Link></li>
+            <li><Link href={href('/#projetos')}>{t.nav.projects}</Link></li>
+            <li><Link href={href('/#servicos')}>{t.nav.services}</Link></li>
+            <li><Link href={href('/#depoimentos')}>{t.nav.testimonials}</Link></li>
           </ul>
         </nav>
         <div className="header-actions">
-          <Link href="/#contato" className="btn btn-primary">
-            Let's Work Together
+          <LanguageSwitch lang={lang} path={path} label={t.nav.language} />
+          <Link href={href('/#contato')} className="btn btn-primary">
+            <span className="cta-full">{t.nav.cta}</span>
+            <span className="cta-short">{t.nav.ctaShort}</span>
           </Link>
         </div>
       </div>

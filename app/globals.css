@@ -87,7 +87,40 @@ nav.main-nav ul{display:flex;gap:32px;}
 nav.main-nav a{ font-size:14.5px;font-weight:500;color:var(--ink-soft); transition:color .15s ease; }
 nav.main-nav a:hover{color:var(--ink);}
 .header-actions{display:flex;align-items:center;gap:20px;}
+.header-actions .cta-short{display:none;}
 @media(max-width:760px){ nav.main-nav{display:none;} }
+
+/* Seletor de idioma (bandeiras) */
+.lang-switch{
+  display:flex; gap:2px; padding:3px;
+  border:1px solid var(--line); border-radius:999px;
+  background:var(--surface);
+}
+.lang-switch a{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 10px 5px 5px; border-radius:999px;
+  font-size:12.5px; font-weight:600; letter-spacing:.04em;
+  color:var(--ink-soft);
+  transition:background .15s ease, color .15s ease;
+}
+.lang-switch a:hover{ color:var(--ink); }
+.lang-switch a.is-active{ background:var(--shape-lavender); color:var(--ink); }
+.lang-switch a:not(.is-active) .lang-flag{ filter:saturate(.35); opacity:.75; transition:filter .15s ease, opacity .15s ease; }
+.lang-switch a:hover .lang-flag{ filter:none; opacity:1; }
+.lang-flag{
+  width:20px; height:20px; border-radius:50%; overflow:hidden; flex:none;
+  outline:1px solid rgba(30,26,43,.12); outline-offset:-1px;
+}
+.lang-flag svg{ display:block; width:100%; height:100%; }
+@media(max-width:560px){
+  .header-inner{ padding:16px 20px; }
+  .header-actions{ gap:10px; }
+  .header-actions .btn{ padding:11px 16px; font-size:13.5px; }
+  .lang-switch a{ padding:4px; }
+  .lang-code{ display:none; }
+  .header-actions .cta-full{ display:none; }
+  .header-actions .cta-short{ display:inline; }
+}
 
 /* Hero */
 .hero{ position:relative; padding:120px 0 100px; }
@@ -685,6 +718,8 @@ footer.site-footer{
   background:var(--ink); color:rgba(255,255,255,.55);
   border-top:1px solid rgba(255,255,255,.12);
 }
+.site-credit{ margin-top:6px; font-size:12px; color:rgba(255,255,255,.4); }
+.site-credit strong{ font-weight:600; color:rgba(255,255,255,.7); }
 
 /* Reveal animation */
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }

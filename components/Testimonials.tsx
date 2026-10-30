@@ -3,9 +3,12 @@ import Reveal from './Reveal';
 import CategoryShape from './CategoryShape';
 import Sparkle from './Sparkle';
 import { urlForImage } from '../sanity/lib/image';
+import { getDictionary, type Locale } from '../lib/i18n';
 import type { Testimonial } from '../lib/types';
 
-export default function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
+export default function Testimonials({ testimonials, lang }: { testimonials: Testimonial[]; lang: Locale }) {
+  const t = getDictionary(lang);
+
   return (
     <section className="testimonials" id="depoimentos">
       <div className="testi-visual" aria-hidden="true">
@@ -16,28 +19,28 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
       <div className="wrap">
         <Reveal className="testi-head">
           <h2>
-            <span className="hero-title-lead">Kind</span> <span className="accent-text">words</span>
+            <span className="hero-title-lead">{t.testimonials.lead}</span> <span className="accent-text">{t.testimonials.accent}</span>
           </h2>
-          <p>What partners and clients say about working together.</p>
+          <p>{t.testimonials.intro}</p>
         </Reveal>
         <Reveal className="testi-grid">
-          {testimonials.map((t) => {
-            const avatarUrl = urlForImage(t.avatar)?.width(96).height(96).url();
+          {testimonials.map((item) => {
+            const avatarUrl = urlForImage(item.avatar)?.width(96).height(96).url();
             return (
-              <figure className="testi-card" key={t._id}>
+              <figure className="testi-card" key={item._id}>
                 <span className="testi-mark" aria-hidden="true">&ldquo;</span>
-                <blockquote className="testi-quote">{t.quote}</blockquote>
+                <blockquote className="testi-quote">{item.quote}</blockquote>
                 <figcaption className="testi-person">
                   <div className="avatar">
                     {avatarUrl ? (
                       <Image src={avatarUrl} alt="" fill sizes="48px" style={{ objectFit: 'cover' }} />
                     ) : (
-                      t.name.charAt(0)
+                      item.name.charAt(0)
                     )}
                   </div>
                   <div>
-                    <strong>{t.name}</strong>
-                    {t.role && <span>{t.role}</span>}
+                    <strong>{item.name}</strong>
+                    {item.role && <span>{item.role}</span>}
                   </div>
                 </figcaption>
               </figure>

@@ -8,11 +8,13 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 // setas levam o card anterior/próximo para o centro.
 export default function ProjectCarousel({
   heading,
-  label,
+  previousLabel,
+  nextLabel,
   children,
 }: {
   heading: ReactNode;
-  label: string;
+  previousLabel: string;
+  nextLabel: string;
   children: ReactNode;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -70,12 +72,12 @@ export default function ProjectCarousel({
       <div className="row-head wrap">
         {heading}
         <div className="row-nav" hidden={count === 1}>
-          <button type="button" onClick={() => centerOn(active - 1, 'smooth')} disabled={active === 0} aria-label={`Previous ${label} project`}>
+          <button type="button" onClick={() => centerOn(active - 1, 'smooth')} disabled={active === 0} aria-label={previousLabel}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M15 6l-6 6 6 6" />
             </svg>
           </button>
-          <button type="button" onClick={() => centerOn(active + 1, 'smooth')} disabled={count > 0 && active === count - 1} aria-label={`Next ${label} project`}>
+          <button type="button" onClick={() => centerOn(active + 1, 'smooth')} disabled={count > 0 && active === count - 1} aria-label={nextLabel}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 6l6 6-6 6" />
             </svg>
