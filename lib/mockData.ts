@@ -41,6 +41,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/disney-tour/cover.jpg',
     galleryUrls: ['/projects/disney-tour/1.jpg', '/projects/disney-tour/2.jpg', '/projects/disney-tour/3.jpg'],
     client: 'Grendene Kids',
+    year: '2025',
     role: 'Product Designer',
     description: [
       "Disney Tour is a preschool-focused toy bus inspired by Mickey Mouse, developed under the Disney license within Grendene's Design Management division.",

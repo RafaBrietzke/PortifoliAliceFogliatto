@@ -34,10 +34,13 @@ export default function About({ settings }: { settings: SiteSettings }) {
         </div>
 
         <Reveal className="whatido-row">
-          <span className="whatido-label">What I do</span>
+          <h2 className="whatido-label">
+            <span className="hero-title-lead">What I</span> <span className="accent-text">do</span>
+          </h2>
           <div className="whatido-cards">
-            {categories.map((group) => (
+            {categories.map((group, i) => (
               <div className="whatido-card" key={group.id}>
+                <span className="whatido-num">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{group.title}</h3>
                 <ul>
                   {group.items.map((item) => (
