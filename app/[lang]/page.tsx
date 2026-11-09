@@ -9,8 +9,13 @@ import CtaFooter from '../../components/CtaFooter';
 import Footer from '../../components/Footer';
 import { getProjects, getServices, getSiteSettings, getTestimonials } from '../../lib/getContent';
 import type { Locale } from '../../lib/i18n';
+import { alternatesFor } from '../../lib/site';
 
 export const revalidate = 60;
+
+export function generateMetadata({ params: { lang } }: { params: { lang: Locale } }) {
+  return { alternates: alternatesFor(lang, '/') };
+}
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
   const [settings, projects, services, testimonials] = await Promise.all([

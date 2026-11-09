@@ -23,6 +23,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // tudo menos o Studio, rotas internas do Next e arquivos estáticos (com extensão)
-  matcher: ['/((?!studio|api|_next|.*\\..*).*)'],
+  // tudo menos o Studio, rotas internas do Next, arquivos estáticos (com extensão)
+  // e as imagens de compartilhamento (/en/opengraph-image precisa responder direto)
+  matcher: ['/((?!studio|api|_next|.*\\..*|.*opengraph-image).*)'],
 };

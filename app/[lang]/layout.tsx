@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import { getDictionary, isLocale, locales, type Locale } from '../../lib/i18n';
+import { siteUrl } from '../../lib/site';
 
 export const dynamicParams = false;
 
@@ -11,10 +12,19 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { lang: Locale } }): Metadata {
   const t = getDictionary(params.lang);
+  // canonical/hreflang ficam em cada página, pois dependem do caminho
   return {
+    metadataBase: new URL(siteUrl),
     title: t.meta.title,
     description: t.meta.description,
-    alternates: { languages: { en: '/', 'pt-BR': '/pt' } },
+    openGraph: {
+      type: 'website',
+      siteName: 'Alice Fogliatto',
+      locale: params.lang === 'pt' ? 'pt_BR' : 'en_US',
+      title: t.meta.title,
+      description: t.meta.description,
+    },
+    twitter: { card: 'summary_large_image' },
   };
 }
 

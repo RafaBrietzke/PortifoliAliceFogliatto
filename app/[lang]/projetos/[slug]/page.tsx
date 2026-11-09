@@ -13,6 +13,7 @@ import ProjectDescription from '../../../../components/ProjectDescription';
 import { urlForImage } from '../../../../sanity/lib/image';
 import { localizeCategories } from '../../../../lib/categories';
 import { getDictionary, localePath, type Locale } from '../../../../lib/i18n';
+import { alternatesFor } from '../../../../lib/site';
 import {
   getProjectBySlug,
   getProjects,
@@ -25,6 +26,27 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs();
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string; lang: Locale } }) {
+  const project = await getProjectBySlug(params.slug, params.lang);
+  if (!project) return {};
+
+  const title = `${project.title} — Alice Fogliatto`;
+  const image = urlForImage(project.coverImage)?.width(1200).height(630).url() ?? project.coverUrl;
+  return {
+    title,
+    description: project.summary,
+    alternates: alternatesFor(params.lang, `/projetos/${project.slug}`),
+    openGraph: {
+      type: 'article',
+      siteName: 'Alice Fogliatto',
+      locale: params.lang === 'pt' ? 'pt_BR' : 'en_US',
+      title,
+      description: project.summary,
+      images: image ? [image] : undefined,
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: { slug: string; lang: Locale } }) {
