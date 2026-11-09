@@ -11,9 +11,9 @@ export const mockSiteSettings: SiteSettings = {
   heroTitle: 'From idea to play experience',
   heroAccentWord: 'play experience',
   heroSubtitle:
-    'Toy & Product Designer creating thoughtful experiences through storytelling, strategy and play.',
+    'Senior Product Designer creating thoughtful experiences through storytelling, strategy and play.',
   aboutLead:
-    'Toy & Product Designer specialized in the development of licensed products and engaging play experiences, with 8+ years of experience bringing ideas from concept to market.',
+    'Senior Product Designer specialized in the development of licensed products and engaging play experiences, with 8+ years of experience bringing ideas from concept to market.',
   highlights: [
     { value: '8+', label: 'years of experience' },
     { value: '55+', label: 'products launched' },
@@ -38,6 +38,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/disney-tour/cover.jpg',
     galleryUrls: ['/projects/disney-tour/1.jpg', '/projects/disney-tour/2.jpg', '/projects/disney-tour/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2025',
     role: 'Product Designer',
     description: [
@@ -54,6 +55,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/barbie-ice-cream-shop/cover.jpg',
     galleryUrls: ['/projects/barbie-ice-cream-shop/1.jpg', '/projects/barbie-ice-cream-shop/2.jpg', '/projects/barbie-ice-cream-shop/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2025',
     role: 'Product Designer',
     description: [
@@ -70,11 +72,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/stitch-pet-shop/cover.jpg',
     galleryUrls: ['/projects/stitch-pet-shop/1.jpg', '/projects/stitch-pet-shop/2.jpg', '/projects/stitch-pet-shop/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2025',
     role: 'Product Designer',
     description: [
       'Playset (footwear packaging) development project under the Disney license, carried out within the Design Management division at Grendene.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, my challenge was to merge the pet shop theme with the Disney license, bringing Stitch into the product's identity as footwear packaging that becomes a playset.",
     ],
   },
   {
@@ -86,11 +89,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/disney-baby-car/cover.jpg',
     galleryUrls: ['/projects/disney-baby-car/1.jpg', '/projects/disney-baby-car/2.jpg', '/projects/disney-baby-car/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
       'Preschool toy (footwear packaging) development project under the Disney license, carried out within the Design Management division at Grendene.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, the challenge was to design a Mickey-inspired preschool push toy that also works as footwear packaging, prioritizing stability, safety and ergonomics for little ones.",
     ],
   },
   {
@@ -102,6 +106,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/mundo-bita-phone/cover.jpg',
     galleryUrls: ['/projects/mundo-bita-phone/1.jpg', '/projects/mundo-bita-phone/2.jpg', '/projects/mundo-bita-phone/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
@@ -118,11 +123,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/barbie-road-trip/cover.jpg',
     galleryUrls: ['/projects/barbie-road-trip/1.jpg', '/projects/barbie-road-trip/2.jpg', '/projects/barbie-road-trip/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
       'Playset (footwear packaging) development project under the Barbie (Mattel) license, carried out within the Design Management division at Grendene.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, the challenge was to turn footwear packaging into a Barbie camper playset, with an opening roof, doors and accessories that extend play beyond the unboxing.",
     ],
   },
   {
@@ -134,6 +140,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/barbie-airplane/cover.jpg',
     galleryUrls: ['/projects/barbie-airplane/1.jpg', '/projects/barbie-airplane/2.jpg', '/projects/barbie-airplane/3.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2023',
     role: 'Product Designer',
     description: [
@@ -150,11 +157,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/havaianas-crossbody-bag/cover.jpg',
     galleryUrls: ['/projects/havaianas-crossbody-bag/1.jpg', '/projects/havaianas-crossbody-bag/2.jpg', '/projects/havaianas-crossbody-bag/3.jpg', '/projects/havaianas-crossbody-bag/4.jpg'],
     client: 'Havaianas',
+    developedAt: 'Havaianas',
     year: '2026',
     role: 'Product Designer',
     description: [
       "Kids crossbody bag development project for Havaianas. The body carries the rice-grain texture and the embossed logo of the brand's flip-flop soles, with a zip closure, rose-gold hardware and a glitter teddy bear charm.",
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As a freelance Product Designer, I worked on research, concept development and the product's 3D model. The challenge was to create the brand's first kids' bag, bringing Havaianas' iconic flip-flop sole into a playful, child-friendly accessory.",
     ],
   },
   {
@@ -166,11 +174,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/havaianas-wristlet-bag/cover.jpg',
     galleryUrls: ['/projects/havaianas-wristlet-bag/1.jpg', '/projects/havaianas-wristlet-bag/2.jpg', '/projects/havaianas-wristlet-bag/3.jpg', '/projects/havaianas-wristlet-bag/4.jpg'],
     client: 'Havaianas',
+    developedAt: 'Havaianas',
     year: '2026',
     role: 'Product Designer',
     description: [
       "Adult wristlet bag development project in partnership with Havaianas. The body carries the rice-grain texture and the embossed logo of the brand's flip-flop soles, with a zip closure, a logo zipper pull and a tone-on-tone wrist strap attached by a clasp.",
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and clean, everyday appeal in the final result.',
+      "As a freelance Product Designer, I worked on research, concept development and the product's 3D model. The challenge was to translate the sole's texture and logo into a clean, functional everyday accessory for adults.",
     ],
   },
   {
@@ -182,6 +191,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/stitch-time-watch/cover.jpg',
     galleryUrls: ['/projects/stitch-time-watch/1.jpg', '/projects/stitch-time-watch/2.jpg', '/projects/stitch-time-watch/3.jpg', '/projects/stitch-time-watch/4.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
@@ -198,11 +208,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/color-backpack/cover.jpg',
     galleryUrls: ['/projects/color-backpack/1.jpg', '/projects/color-backpack/2.jpg', '/projects/color-backpack/3.jpg', '/projects/color-backpack/4.jpg', '/projects/color-backpack/5.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
       'Kids backpack development project under the Barbie (Mattel) license, carried out within the Design Management division at Grendene. The front pouches come in contrasting colors and glitter finishes and can be worn on their own as a belt bag.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, I explored a modular solution: removable front pouches that double as a belt bag, bringing Barbie's identity into a versatile, fashion-forward accessory.",
     ],
   },
   {
@@ -214,11 +225,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/justice-league-backpack/cover.jpg',
     galleryUrls: ['/projects/justice-league-backpack/1.jpg', '/projects/justice-league-backpack/2.jpg', '/projects/justice-league-backpack/3.jpg', '/projects/justice-league-backpack/4.jpg', '/projects/justice-league-backpack/5.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2024',
     role: 'Product Designer',
     description: [
       'Kids backpack development project under the Justice League (DC) license, carried out within the Design Management division at Grendene. Each version wears its hero\'s suit, with a comic-strip texture molded into the body and adjustable straps.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, the challenge was to give each hero a distinct look within a single product structure, through its suit and a molded comic-strip texture.",
     ],
   },
   {
@@ -230,6 +242,7 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/barbie-flower-bag/cover.jpg',
     galleryUrls: ['/projects/barbie-flower-bag/1.jpg', '/projects/barbie-flower-bag/2.jpg', '/projects/barbie-flower-bag/3.jpg', '/projects/barbie-flower-bag/4.jpg', '/projects/barbie-flower-bag/5.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2022',
     role: 'Product Designer',
     description: [
@@ -246,11 +259,12 @@ export const mockProjects: Project[] = [
     coverUrl: '/projects/disney-lunch-time/cover.jpg',
     galleryUrls: ['/projects/disney-lunch-time/1.jpg', '/projects/disney-lunch-time/2.jpg', '/projects/disney-lunch-time/3.jpg', '/projects/disney-lunch-time/4.jpg'],
     client: 'Grendene Kids',
+    developedAt: 'Grendene',
     year: '2025',
     role: 'Product Designer',
     description: [
       'Kids mealtime set development project under the Disney license, carried out within the Design Management division at Grendene. Each character opens into a bowl with suction-cup feet and comes with a matching spoon and fork, in Stitch, Mickey and Minnie versions.',
-      'I worked as a product designer in collaboration with a multidisciplinary team, contributing to combine brand identity, functionality, and playful appeal in the final result.',
+      "As Product Designer, I was involved throughout the entire development process, from market research and concept generation to production follow-up and final sample approval. Working closely with multidisciplinary teams, licensors, suppliers, and 3D modelers, the challenge was to turn Stitch, Mickey and Minnie into a functional, child-safe bowl that makes mealtime more fun.",
     ],
   },
   {
@@ -263,11 +277,13 @@ export const mockProjects: Project[] = [
     galleryUrls: ['/projects/disney-christmas-ornaments/1.jpg', '/projects/disney-christmas-ornaments/2.jpg', '/projects/disney-christmas-ornaments/3.jpg'],
     client: 'Ri Happy',
     company: 'Global Products',
+    developedAt: 'Global Products',
     year: '2025',
     role: 'Product Designer',
     description: [
       'Collectible Christmas ball ornament development project under the Disney license, featuring Mickey & Friends. The project was developed for the client Ri Happy while I was working as a designer at Global Products.',
       'Each clear ball holds a character figure on a colored base, in Mickey, Minnie, Donald and Pluto versions.',
+      'As Product Designer, I was responsible for reference research, character style studies and the product\'s 3D model. The challenge was to keep each character fun and expressive, even in such a small format.',
     ],
   },
 ];
@@ -281,9 +297,27 @@ export const mockServices: Service[] = [
 ];
 
 export const mockTestimonials: Testimonial[] = [
-  { _id: 't-1', quote: 'Working together was transformative for our brand. Every detail was thought through with great care and strategy.', name: 'Sample Client', role: 'Founder, Company A' },
-  { _id: 't-2', quote: 'Delivered far beyond expectations — the visual identity captured exactly the essence we wanted to communicate.', name: 'Sample Client', role: 'Head of Marketing, Company B' },
-  { _id: 't-3', quote: 'A collaborative process from start to finish, with a rare visual sensibility. I recommend it with my eyes closed.', name: 'Sample Client', role: 'CEO, Company C' },
+  {
+    _id: 't-1',
+    quote:
+      "I had the opportunity to work with Alice at two different companies, and her commitment, creativity and attention to detail were always very clear in her work and praised by everyone. Besides being an extremely polite person who works very well in a team, she also leads projects masterfully whenever she takes on that role.",
+    name: 'Thalita Godoy',
+    role: 'Former Design Manager at Global Products',
+  },
+  {
+    _id: 't-2',
+    quote:
+      "Working with Alice is the best! She is very creative, a great team player, and I can't even count the soooo many times we collaborated to create amazing things together. For her, a challenge is motivation. Always in a good mood, she makes any project fun. I'm very proud to have worked on the same team as her and grateful for our time at Grendene Kids.",
+    name: 'Carolina Lopes',
+    role: 'Former Designer at Grendene Kids',
+  },
+  {
+    _id: 't-3',
+    quote:
+      "Alice was my work partner for a few years and I can say it was an experience that left a permanent mark on me. She is a competent, creative and qualified professional, and even with all that working power she is generous in teamwork, sharing responsibilities and rewards. Beyond her creative and technical ability, she is very organized and has a strong leadership profile, knowing how to divide tasks and coordinate deadlines. A one-of-a-kind professional!",
+    name: 'Ricardo Coleoni',
+    role: 'Senior Designer at Grendene Kids',
+  },
 ];
 
 export const gradients = [

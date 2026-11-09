@@ -62,6 +62,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'developedAt',
+      title: 'Desenvolvido em (empresa)',
+      type: 'string',
+      description: 'Ex: "Grendene". Gera o aviso de direitos autorais no fim do texto do case.',
+    }),
+    defineField({
       name: 'year',
       title: 'Ano',
       type: 'string',

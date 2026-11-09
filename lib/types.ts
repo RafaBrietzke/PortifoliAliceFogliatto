@@ -13,6 +13,8 @@ export type Project = {
   galleryUrls?: string[];
   client?: string;
   company?: string;
+  // empresa onde o projeto foi desenvolvido — usada no aviso de direitos autorais
+  developedAt?: string;
   year?: string;
   role?: string;
   tools?: string;

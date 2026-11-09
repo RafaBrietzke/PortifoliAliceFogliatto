@@ -22,7 +22,7 @@ export function localePath(lang: Locale, path: string) {
 const en = {
   meta: {
     title: 'Alice Fogliatto — Portfolio',
-    description: 'Toy & Product Designer creating thoughtful experiences through storytelling, strategy and play.',
+    description: 'Senior Product Designer creating thoughtful experiences through storytelling, strategy and play.',
   },
   nav: {
     about: 'About',
@@ -50,7 +50,7 @@ const en = {
   testimonials: {
     lead: 'Kind',
     accent: 'words',
-    intro: 'What partners and clients say about working together.',
+    intro: 'What colleagues say about working with me.',
   },
   cta: {
     lead: "Let's create",
@@ -69,6 +69,8 @@ const en = {
     nextProject: 'Next project',
     keepExploring: 'Keep exploring',
     allProjects: 'All projects',
+    rightsNotice: (org: string) =>
+      `Developed at ${org} in collaboration with cross-functional teams. Licensed intellectual property belongs to its respective owners. All other project rights are subject to applicable agreements.`,
   },
   gallery: {
     open: (n: number, total: number) => `Open image ${n} of ${total}`,
@@ -85,7 +87,7 @@ export type Dictionary = typeof en;
 const pt: Dictionary = {
   meta: {
     title: 'Alice Fogliatto — Portfólio',
-    description: 'Toy & Product Designer criando experiências pensadas com storytelling, estratégia e brincadeira.',
+    description: 'Senior Product Designer criando experiências pensadas com storytelling, estratégia e brincadeira.',
   },
   nav: {
     about: 'Sobre',
@@ -113,7 +115,7 @@ const pt: Dictionary = {
   testimonials: {
     lead: 'Palavras',
     accent: 'gentis',
-    intro: 'O que parceiros e clientes dizem sobre trabalhar juntos.',
+    intro: 'O que colegas de trabalho dizem sobre trabalhar comigo.',
   },
   cta: {
     lead: 'Vamos criar',
@@ -132,6 +134,8 @@ const pt: Dictionary = {
     nextProject: 'Próximo projeto',
     keepExploring: 'Continue explorando',
     allProjects: 'Todos os projetos',
+    rightsNotice: (org) =>
+      `Desenvolvido na ${org} em colaboração com equipes multifuncionais. A propriedade intelectual licenciada pertence aos seus respectivos titulares. Todos os demais direitos do projeto estão sujeitos aos acordos aplicáveis.`,
   },
   gallery: {
     open: (n, total) => `Abrir imagem ${n} de ${total}`,

@@ -411,6 +411,7 @@ nav.main-nav a:hover{color:var(--ink);}
 .pd-story .accent-text{ color:var(--shape-lime); }
 .pd-story-text p{ font-size:19px; line-height:1.6; margin-bottom:20px; }
 .pd-story-text p:last-child{ margin-bottom:0; }
+.pd-story-text p.pd-rights{ margin-top:36px; padding-top:20px; border-top:1px solid rgba(255,255,255,.18); font-size:13px; line-height:1.55; opacity:.7; }
 .pd-result{ margin-top:36px; display:flex; align-items:baseline; gap:14px; }
 .pd-result .stat-label{ max-width:none; }
 @media(max-width:900px){

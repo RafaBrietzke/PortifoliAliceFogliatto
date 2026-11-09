@@ -130,6 +130,7 @@ export default async function ProjectPage({ params }: { params: { slug: string; 
                     <div className="stat-label">{project.resultLabel}</div>
                   </div>
                 )}
+                {project.developedAt && <p className="pd-rights">{t.project.rightsNotice(project.developedAt)}</p>}
               </Reveal>
             </div>
             <svg className="about-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">

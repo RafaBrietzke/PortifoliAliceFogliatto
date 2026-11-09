@@ -12,7 +12,7 @@ export const projectsQuery = groq`*[_type == "project"] | order(order asc, _crea
 
 export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $slug][0]{
   _id, title, "slug": slug.current, category, summary, coverImage, gallery,
-  client, company, year, role, tools, description, resultLabel, resultValue
+  client, company, developedAt, year, role, tools, description, resultLabel, resultValue
 }`;
 
 export const projectSlugsQuery = groq`*[_type == "project"]{ "slug": slug.current }`;

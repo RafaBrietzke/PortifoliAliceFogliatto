@@ -8,9 +8,9 @@ export const ptSiteSettings: Partial<SiteSettings> = {
   heroTitle: 'Da ideia à experiência de brincar',
   heroAccentWord: 'experiência de brincar',
   heroSubtitle:
-    'Toy & Product Designer criando experiências pensadas com storytelling, estratégia e brincadeira.',
+    'Senior Product Designer criando experiências pensadas com storytelling, estratégia e brincadeira.',
   aboutLead:
-    'Toy & Product Designer especializada no desenvolvimento de produtos licenciados e experiências de brincar envolventes, com mais de 8 anos levando ideias do conceito ao mercado.',
+    'Senior Product Designer especializada no desenvolvimento de produtos licenciados e experiências de brincar envolventes, com mais de 8 anos levando ideias do conceito ao mercado.',
   highlights: [
     { value: '8+', label: 'anos de experiência' },
     { value: '55+', label: 'produtos lançados' },
@@ -43,14 +43,14 @@ export const ptProjects: Record<string, Partial<Project>> = {
     summary: 'Embalagem de calçado transformada em um playset de pet shop do Stitch, sob licença Disney.',
     description: [
       'Projeto de desenvolvimento de playset (embalagem de calçado) sob licença Disney, realizado dentro da divisão de Gestão de Design da Grendene.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, meu desafio foi unir o tema pet shop à licença Disney, trazendo o Stitch para a identidade do produto como uma embalagem de calçado que vira playset.',
     ],
   },
   'behance-disney-baby-car': {
     summary: 'Carrinho de brinquedo pré-escolar que também é embalagem de calçado, sob licença Disney.',
     description: [
       'Projeto de desenvolvimento de brinquedo pré-escolar (embalagem de calçado) sob licença Disney, realizado dentro da divisão de Gestão de Design da Grendene.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, o desafio foi criar um brinquedo de empurrar pré-escolar inspirado no Mickey que também funcionasse como embalagem de calçado, priorizando estabilidade, segurança e ergonomia para os pequenos.',
     ],
   },
   'behance-mundo-bita-phone': {
@@ -64,7 +64,7 @@ export const ptProjects: Record<string, Partial<Project>> = {
     summary: 'Embalagem de calçado que vira um playset de motorhome de brinquedo, sob licença Barbie.',
     description: [
       'Projeto de desenvolvimento de playset (embalagem de calçado) sob licença Barbie (Mattel), realizado dentro da divisão de Gestão de Design da Grendene.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, o desafio foi transformar a embalagem de calçado em um playset de trailer da Barbie, com teto que abre, portas e acessórios que prolongam a brincadeira para além do unboxing.',
     ],
   },
   'behance-barbie-airplane': {
@@ -78,14 +78,14 @@ export const ptProjects: Record<string, Partial<Project>> = {
     summary: 'Bolsa transversal infantil com a textura de arroz da sola Havaianas e um chaveiro de ursinho com glitter.',
     description: [
       'Projeto de desenvolvimento de bolsa transversal infantil para a Havaianas. O corpo traz a textura de arroz e o logo em relevo das solas dos chinelos da marca, com fechamento em zíper, aviamentos em rose gold e um chaveiro de ursinho com glitter.',
-      sameTeam,
+      'Como Product Designer freelancer, atuei na pesquisa, no desenvolvimento do conceito e no modelo 3D do produto. O desafio foi criar a primeira bolsa infantil da marca, levando a icônica sola dos chinelos Havaianas para um acessório lúdico e pensado para crianças.',
     ],
   },
   'havaianas-wristlet-bag': {
     summary: 'Bolsa de mão adulta com a textura de arroz da sola Havaianas e alça de pulso tom sobre tom.',
     description: [
       'Projeto de desenvolvimento de bolsa de mão adulta em parceria com a Havaianas. O corpo traz a textura de arroz e o logo em relevo das solas dos chinelos da marca, com fechamento em zíper, puxador com logo e alça de pulso tom sobre tom presa por um mosquetão.',
-      'Atuei como product designer em colaboração com uma equipe multidisciplinar, contribuindo para unir identidade de marca, funcionalidade e um apelo limpo e cotidiano no resultado final.',
+      'Como Product Designer freelancer, atuei na pesquisa, no desenvolvimento do conceito e no modelo 3D do produto. O desafio foi traduzir a textura e o logo da sola em um acessório limpo e funcional para o dia a dia de adultos.',
     ],
   },
   'behance-stitch-time-watch': {
@@ -99,14 +99,14 @@ export const ptProjects: Record<string, Partial<Project>> = {
     summary: 'Mochila infantil com bolsinhas frontais coloridas que podem ser usadas como pochete, sob licença Barbie.',
     description: [
       'Projeto de desenvolvimento de mochila infantil sob licença Barbie (Mattel), realizado dentro da divisão de Gestão de Design da Grendene. As bolsinhas frontais vêm em cores contrastantes e acabamentos com glitter, e podem ser usadas sozinhas como pochete.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, explorei uma solução modular: bolsinhas frontais removíveis que viram pochete, levando a identidade da Barbie para um acessório versátil e fashion.',
     ],
   },
   'justice-league-backpack': {
     summary: 'Mochila infantil nas versões Batman, Superman e Mulher-Maravilha, sob licença Liga da Justiça.',
     description: [
       'Projeto de desenvolvimento de mochila infantil sob licença Liga da Justiça (DC), realizado dentro da divisão de Gestão de Design da Grendene. Cada versão veste o traje do seu herói, com uma textura de história em quadrinhos moldada no corpo e alças ajustáveis.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, o desafio foi dar a cada herói um visual próprio dentro de uma única estrutura de produto, por meio do seu traje e de uma textura de história em quadrinhos moldada.',
     ],
   },
   'barbie-flower-bag': {
@@ -120,7 +120,7 @@ export const ptProjects: Record<string, Partial<Project>> = {
     summary: 'Tigela de personagem com tampa, colher e garfo que transforma a hora da refeição em brincadeira, sob licença Disney.',
     description: [
       'Projeto de desenvolvimento de kit de refeição infantil sob licença Disney, realizado dentro da divisão de Gestão de Design da Grendene. Cada personagem se abre em uma tigela com ventosas na base e acompanha colher e garfo combinando, nas versões Stitch, Mickey e Minnie.',
-      sameTeam,
+      'Como Product Designer, participei de todo o processo de desenvolvimento, da pesquisa de mercado e geração de conceitos ao acompanhamento da produção e à aprovação final da amostra. Trabalhando lado a lado com equipes multidisciplinares, licenciadores, fornecedores e modeladores 3D, o desafio foi transformar Stitch, Mickey e Minnie em uma tigela funcional e segura para crianças, que deixa a hora da refeição mais divertida.',
     ],
   },
   'disney-christmas-ornaments': {
@@ -128,6 +128,7 @@ export const ptProjects: Record<string, Partial<Project>> = {
     description: [
       'Projeto de desenvolvimento de bolas de Natal colecionáveis sob licença Disney, com Mickey & Amigos. O projeto foi desenvolvido para o cliente Ri Happy enquanto eu atuava como designer na Global Products.',
       'Cada bola transparente guarda uma figura de personagem sobre uma base colorida, nas versões Mickey, Minnie, Pato Donald e Pluto.',
+      'Como Product Designer, fui responsável pela pesquisa de referências, pelos estudos de estilo dos personagens e pelo modelo 3D do produto. O desafio foi manter cada personagem divertido e expressivo, mesmo em um formato tão pequeno.',
     ],
   },
 };
@@ -141,7 +142,19 @@ export const ptServices: Record<string, Partial<Service>> = {
 };
 
 export const ptTestimonials: Record<string, Partial<Testimonial>> = {
-  't-1': { name: 'Cliente Exemplo', quote: 'Trabalhar juntos foi transformador para a nossa marca. Cada detalhe foi pensado com muito cuidado e estratégia.', role: 'Fundador(a), Empresa A' },
-  't-2': { name: 'Cliente Exemplo', quote: 'Entregou muito além do esperado — a identidade visual capturou exatamente a essência que queríamos comunicar.', role: 'Head de Marketing, Empresa B' },
-  't-3': { name: 'Cliente Exemplo', quote: 'Processo colaborativo do início ao fim, com uma sensibilidade visual rara. Recomendo de olhos fechados.', role: 'CEO, Empresa C' },
+  't-1': {
+    quote:
+      'Tive a oportunidade de trabalhar com a Alice em duas empresas diferentes, e o comprometimento, a criatividade e o cuidado com os detalhes sempre foram muito claros no trabalho dela e elogiados por todos. Além de ser uma pessoa extremamente educada e saber trabalhar muito bem em equipe, ela também lidera projetos com maestria quando assume esse papel.',
+    role: 'Ex-Design Manager na Global Products',
+  },
+  't-2': {
+    quote:
+      'Trabalhar com a Alice é bom demais! Ela é muito criativa, contribui muito bem em equipe, e nem consigo contar aqui as taaaantas vezes que colaboramos para criar coisas incríveis juntas. Desafio para ela é motivação. Sempre bem humorada, ela torna qualquer projeto divertido. Sinto muito orgulho de ter trabalhado na mesma equipe que ela e agradeço pelo nosso tempo de Grendene Kids.',
+    role: 'Ex-Designer na Grendene Kids',
+  },
+  't-3': {
+    quote:
+      'A Alice foi minha dupla de trabalho por alguns anos e posso afirmar que foi uma experiência que me marcou permanentemente. Ela é uma profissional competente, criativa e qualificada e mesmo com toda essa potência de trabalho ela é generosa para trabalhar em equipe e dividir responsabilidades e recompensas. Além da capacidade criativa e técnica ela é muito organizada e tem um forte perfil de liderança, sabendo dividir tarefas e coordenar prazos. Uma profissional ímpar!',
+    role: 'Designer Sênior na Grendene Kids',
+  },
 };
